@@ -3,16 +3,60 @@
 }
 
 body {
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: rgb(88, 88, 88);
+    overflow-x: hidden; /*omly hides the x scroll wheel */
     margin: 0;
-    height: 100vh;
-    overflow: hidden;
 }
 
-h1 {
-    color: rgb(0, 0, 0);
-    font-family: Arial, sans-serif;
+.container{
+    background-color: #fafafa;
+    transform-origin: top left;/*sets thje origon of spin at the top lect */
+    transition: transform 0.5s linear;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
 }
+
+.container.show-nav{
+    transform: rotate(-20deg);
+}
+
+.circle-container{
+    position: fixed;
+    top:  -100px;
+    left: -100px;
+}
+
+.circle {
+    background-color: rgb(248, 123, 100);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+
+.circle button {
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border:0;
+    font-size: 26px;
+    color: white;
+}
+
+.circle button:focus {
+    outline: none;
+}
+
+.circle button#open {
+    left: 60%;
+}
+
+.circle button#close {
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+} 
